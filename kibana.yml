@@ -14,4 +14,6 @@
 server.name: kibana
 server.host: "0"
 csp.strict: true
-elasticsearch.hosts: http://elasticsearch:9200
+elasticsearch.hosts: https://sql-workbench-internal-1210917088.us-west-2.elb.amazonaws.com:9200
+# got local test
+# http://elasticsearch:9200
