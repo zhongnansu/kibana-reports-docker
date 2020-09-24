@@ -23,7 +23,7 @@ services:
       - esnet
 
   kibana:
-    image: 0293e533cd20
+    image: 319491179b33
     container_name: kibana
     volumes:
       - data:/usr/share/kibana/data
