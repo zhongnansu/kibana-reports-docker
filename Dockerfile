@@ -11,7 +11,6 @@ RUN chmod -R g=u /usr/share/kibana
 RUN find /usr/share/kibana -type d -exec chmod g+s {} \;
 
 RUN mkdir /usr/share/plugins
-# COPY opendistro_kibana_reports-0.0.1.zip /usr/share/plugins/opendistro_kibana_reports-0.0.1.zip
 
 
 FROM centos:7
