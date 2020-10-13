@@ -29,7 +29,7 @@ ENV ELASTIC_CONTAINER true
 WORKDIR /usr/share/kibana
 ENV PATH=/usr/share/kibana/bin:$PATH
 
-RUN kibana-plugin install https://kibana-reports-live-demo.s3-us-west-2.amazonaws.com/opendistro_kibana_reports-1.10.1.0.zip --allow-root && \ 
+RUN kibana-plugin install https://kibana-reports-live-demo.s3-us-west-2.amazonaws.com/kibana-reports-plugin-for-fgac/opendistro_kibana_reports-1.10.1.0.zip --allow-root && \ 
   ln -s /usr/share/kibana /opt/kibana && \
   chown -R 1000:0 . && \
   chmod -R g=u /usr/share/kibana && \
