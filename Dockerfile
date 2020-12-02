@@ -15,7 +15,7 @@ RUN mkdir /usr/share/plugins
 
 FROM centos:7
 
-RUN yum update -y && yum install -y fontconfig freetype atk java-atk-wrapper at-spi2-atk gtk3 libXt && yum clean all
+RUN yum update -y && yum install -y libnss3.so xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-utils xorg-x11-fonts-cyrillic xorg-x11-fonts-Type1 xorg-x11-fonts-misc fontconfig freetype && yum clean all
 # RUN sudo grubby --args="namespace.unpriv_enable=1 user_namespace.enable=1" --update-kernel="$(grubby --default-kernel)"
 # RUN sudo echo "user.max_user_namespaces=15000" >> /etc/sysctl.conf
 # RUN reboot
@@ -29,7 +29,7 @@ ENV ELASTIC_CONTAINER true
 WORKDIR /usr/share/kibana
 ENV PATH=/usr/share/kibana/bin:$PATH
 
-RUN kibana-plugin install https://kibana-reports-live-demo.s3-us-west-2.amazonaws.com/opendistroReportsKibana-1.12.0.0.zip --allow-root && \ 
+RUN kibana-plugin install https://kibana-reports-live-demo.s3-us-west-2.amazonaws.com/linux/opendistroReportsKibana-1.12.0.0-linux-x64.zip --allow-root && \ 
   ln -s /usr/share/kibana /opt/kibana && \
   chown -R 1000:0 . && \
   chmod -R g=u /usr/share/kibana && \
